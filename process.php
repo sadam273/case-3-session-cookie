@@ -3,6 +3,7 @@ $emailAwal = "sadam@gmail.com";
 $passwordAwal = "S@dam123";
 $email = $_POST['email'];
 $password = $_POST['password'];
+$checkbox = $_POST['remember-me'];
 
 function validate($email, $password) {
     global $emailAwal;
@@ -15,10 +16,10 @@ function validate($email, $password) {
 }
 
 if (validate($email, $password)) {
-    header("Location: profil.php");
+    echo "success";
     exit; 
 } else {
-    header("Location: index.php");
+    echo 'Invalid email or password';;
     exit; 
 }
 
