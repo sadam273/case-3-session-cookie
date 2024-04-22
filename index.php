@@ -54,7 +54,7 @@
     <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("login-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var div = document.getElementById("validate-email-pass");
@@ -66,14 +66,11 @@
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
           if (xhr.responseText === "success") {
-            // Redirect to profile.php if login is successful
             window.location.href = "profil.php";
           } else {
-            // Alert error message if login fails
             div.innerHTML = "Periksa lagi password dan email anda!";
           }
         } else {
-          // Handle AJAX error
           alert("An error occurred while processing your request.");
         }
       }
