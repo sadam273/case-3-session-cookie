@@ -1,0 +1,15 @@
+.login-form-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#email-checker {
+  font-size: 16px;
+  color: red;
+}
+
+#password-checker {
+  font-size: 16px;
+  color: red;
+}
