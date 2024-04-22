@@ -42,6 +42,7 @@
           />
           <label for="remember-me"> Remember Me</label>
         </p>
+        <div id="validate-email-pass"></div>
         <p>
           <input type="submit" id="login" value="Login" />
         </p>
@@ -56,6 +57,7 @@
     event.preventDefault(); // Prevent default form submission
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
+    var div = document.getElementById("validate-email-pass");
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "process.php", true);
@@ -68,7 +70,7 @@
             window.location.href = "profil.php";
           } else {
             // Alert error message if login fails
-            alert(xhr.responseText);
+            div.innerHTML = "Periksa lagi password dan email anda!";
           }
         } else {
           // Handle AJAX error
