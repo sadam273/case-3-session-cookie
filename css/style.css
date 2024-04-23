@@ -1,7 +1,71 @@
-.login-form-wrap {
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+html,
+body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: #e4f0fb;
+}
+
+.wrapper {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 16px;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    #9ec5fe 38.54%,
+    rgba(158, 197, 254, 0) 100%
+  );
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+}
+
+::selection {
+  background: #1a75ff;
+  color: #fff;
+}
+
+body {
+  background-color: #f8f9fa;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Membuat konten berada di tengah secara horizontal */
+  align-items: center; /* Membuat konten berada di tengah secara vertikal */
+  min-height: 100vh; /* Untuk mengisi tinggi layar */
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin input[type="email"],
+.form-signin input[type="password"] {
+  direction: ltr;
+  height: 40px;
+  font-size: 15px;
+}
+
+.form-signin input[type="submit"] {
+  font-size: 15px;
+  padding: 10px 20px;
 }
 
 #email-checker {
@@ -17,4 +81,71 @@
 #validate-email-pass {
   font-size: 16px;
   color: red;
+}
+
+/* css profile */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: #92d2f6;
+  color: aliceblue;
+}
+nav {
+  background: #fff;
+  width: 100%;
+  padding: 10px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.user-pic {
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+nav ul {
+  width: 100%;
+  text-align: right;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.sub-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 10%;
+  width: 320px;
+}
+
+.sub-menu {
+  background: #fff;
+  padding: 20px;
+  margin: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info h3 {
+  font-weight: 500;
+}
+
+.user-info img {
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
 }
