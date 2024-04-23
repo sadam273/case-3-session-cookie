@@ -9,6 +9,9 @@ function validate($email, $password) {
         //set session
         $_SESSION['login']=true;
         $_SESSION['email']="sadam@gmail.com";
+        if(isset($_POST['remember'])){
+            setcookie('login', 'true', time() + 3600 * 24); 
+        }
         return true;
     } else {
         return false;

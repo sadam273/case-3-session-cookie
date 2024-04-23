@@ -1,4 +1,11 @@
 <?php
+//cek cookie
+if( isset($_COOKIE['login'])){
+  if($_COOKIE['login'] == "true"){
+    $_SESSION['login']=true;
+  }
+}
+
 //buat supaya jika sudah login tidak bisa mengakses halaman index
 session_start();
 if(isset($_SESSION['login'])){
@@ -60,10 +67,8 @@ if(isset($_SESSION['login'])){
               <div id="password-checker"></div>
             </div>
             <div class="checkbox mb-3">
-              <label>
-                <input type="checkbox" id="checkbox" value="remember-me" />
-                Remember me
-              </label>
+              <input type="checkbox" id="checkbox" value="remember-me" name="remember" />
+              <label for="remember">Remember me</label>
             </div>
             <div class="col-auto">
             <input type="submit" id="login" value="Login" class="btn btn-primary mb-3"/>
@@ -78,10 +83,12 @@ if(isset($_SESSION['login'])){
     <script src="js/ajax.js"></script>
     <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("login-form").addEventListener("submit", function(event) {
+  document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault(); 
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
+    var remember = document.getElementById("checkbox").checked ? 'remember=on' : '';
+
     var div = document.getElementById("validate-email-pass");
 
     var xhr = new XMLHttpRequest();
@@ -100,9 +107,10 @@ if(isset($_SESSION['login'])){
         }
       }
     };
-    xhr.send("email=" + encodeURIComponent(email) + "&password=" + encodeURIComponent(password));
+    xhr.send("email=" + encodeURIComponent(email) + "&password=" + encodeURIComponent(password) + "&" + remember);
   });
 });
+
        
     </script>
   </body>
